@@ -146,7 +146,7 @@
         &kp ESCAPE         &kp AT_SIGN    &kp HASH    &kp DOLLAR          &kp PERCENT                  &kp CARET         &kp AMPERSAND         &kp ASTERISK              &none              &kp BACKSPACE  
         &td LS(TAB) TAB    &kp EQUAL      &kp GRAVE   &kp SINGLE_QUOTE    &kp SINGLE_QUOTE             &kp BACKSLASH     &kp LEFT_BRACE        &kp RIGHT_BRACE           &kp PIPE           &kp ENTER 
         &kp TILDE          &trans         &kp TILDE   &kp DOUBLE_QUOTES   &kp DOUBLE_QUOTES            &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS     &kp RIGHT_BRACKET  &to 2
-                                      &to 0 &kp LEFT_SHIFT &trans             &trans &mt RIGHT_ALT SPACE  &to 3   
+                                      &to 0 &kp LEFT_SHIFT                &mt RIGHT_ALT SPACE  &to 3   
         >;
     };
 
