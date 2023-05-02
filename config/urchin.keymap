@@ -84,7 +84,7 @@
           combo_del {
           timeout-ms = <50>;
     key-positions = <0 1>;
-          bindings = <&kp DEL>;
+          bindings = <&mt DEL BACKSPACE>;
           layers = <0>;
       };
       combo_esc { 
@@ -117,14 +117,20 @@
       };
       combo_dollar {
           timeout-ms = <50>;
-    key-positions = <22 23>;
+    key-positions = <26 27>;
           bindings = <&kp DOLLAR>;
           layers = <0>;
       };
       combo_n0 {
           timeout-ms = <50>;
-    key-positions = <26 27>;
+    key-positions = <22 23>;
           bindings = <&kp N0>;
+          layers = <0>;
+      };
+      combo_screenshot1 {
+          timeout-ms = <50>;
+    key-positions = <0 4>;
+          bindings = <&kp LS(LG(N4))>;
           layers = <0>;
       };
 	};
@@ -143,7 +149,7 @@
 
     layer_Layer___2 {
         bindings = <
-        &kp ESCAPE         &kp AT_SIGN    &kp HASH    &kp DOLLAR          &kp PERCENT                  &kp CARET         &kp AMPERSAND         &kp ASTERISK              &none              &kp BACKSPACE  
+        &kp ESCAPE         &kp AT_SIGN    &kp HASH    &kp DOLLAR          &kp PERCENT                  &kp CARET         &kp AMPERSAND         &kp ASTERISK              &key_repeat        &kp BACKSPACE  
         &td LS(TAB) TAB    &kp EQUAL      &kp GRAVE   &kp SINGLE_QUOTE    &kp SINGLE_QUOTE             &kp BACKSLASH     &kp LEFT_BRACE        &kp RIGHT_BRACE           &kp PIPE           &kp ENTER 
         &kp TILDE          &trans         &kp TILDE   &kp DOUBLE_QUOTES   &kp DOUBLE_QUOTES            &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS     &kp RIGHT_BRACKET  &to 2
                                       &to 0 &kp LEFT_SHIFT                &mt RIGHT_ALT SPACE  &to 3   
