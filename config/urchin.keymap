@@ -79,98 +79,116 @@
 	};
 
 
-	combos {
-		compatible = "zmk,combos";
-          combo_del {
-          timeout-ms = <50>;
-    key-positions = <0 1>;
-          bindings = <&mt DEL BACKSPACE>;
-          layers = <0>;
-      };
-      combo_esc { 
-          timeout-ms = <50>;
-          key-positions = <23 24>;
-          bindings = <&kp ESC>;
-          layers = <0>;
-      };
-      combo_ent {
-          timeout-ms = <50>;
-    key-positions = <20 21>;
-          bindings = <&kp RET>;
-          layers = <0>;
-      };
-      combo_backspace {
-          timeout-ms = <50>;
-    key-positions = <8 9>;
-          bindings = <&kp BACKSPACE>;
-          layers = <0>;
-      };
-      combo_layer_3 {
-          timeout-ms = <50>;
-    key-positions = <27 28>;
-          bindings = <&to 3>;
-      };
-      combo_layer_2 {
-          timeout-ms = <50>;
-          key-positions = <17 18>;
-          bindings = <&to 2>;
-      };
-      combo_dollar {
-          timeout-ms = <50>;
-    key-positions = <26 27>;
-          bindings = <&kp DOLLAR>;
-          layers = <0>;
-      };
-      combo_n0 {
-          timeout-ms = <50>;
-    key-positions = <22 23>;
-          bindings = <&kp N0>;
-          layers = <0>;
-      };
-      combo_screenshot1 {
-          timeout-ms = <50>;
-    key-positions = <0 4>;
-          bindings = <&kp LS(LG(N4))>;
-          layers = <0>;
-      };
-	};
+  combos {
+    compatible = "zmk,combos";
+    combo_backspace {
+      timeout-ms = <50>;
+      key-positions = <0 1>;
+      bindings = <&kp BACKSPACE>;
+      layers = <0>;
+    };
+    combo_del {
+      timeout-ms = <50>;
+      key-positions = <8 9>;
+      bindings = <&kp DEL>;
+      layers = <0>;
+    };
+    combo_esc { 
+      timeout-ms = <50>;
+      key-positions = <23 24>;
+      bindings = <&kp ESC>;
+      layers = <0>;
+    };
+    combo_ent {
+      timeout-ms = <50>;
+      key-positions = <20 21>;
+      bindings = <&kp RET>;
+      layers = <0>;
+    };
+    combo_layer_3 {
+      timeout-ms = <50>;
+      key-positions = <27 28>;
+      bindings = <&to 3>;
+    };
+    combo_layer_2 {
+      timeout-ms = <50>;
+      key-positions = <17 18>;
+      bindings = <&to 2>;
+    };
+    combo_dollar {
+      timeout-ms = <50>;
+      key-positions = <26 27>;
+      bindings = <&kp DOLLAR>;
+      layers = <0>;
+    };
+    combo_n0 {
+      timeout-ms = <50>;
+      key-positions = <22 23>;
+      bindings = <&kp N0>;
+      layers = <0>;
+    };
+    combo_screenshot1 {
+      timeout-ms = <50>;
+      key-positions = <0 4>;
+      bindings = <&kp LS(LG(N4))>;
+      layers = <0>;
+    };
+    combo_minus{
+      timeout-ms = <50>;
+      key-positions = <15 6>;
+      bindings = <&kp MINUS>;
+      layers = <0>;
+    };
+    combo_underscore{
+      timeout-ms = <50>;
+      key-positions = <15 16>;
+      bindings = <&kp UNDERSCORE>;
+      layers = <0>;
+    };
+    combo_excl{
+      timeout-ms = <50>;
+      key-positions = <28 29>;
+      bindings = <&kp EXCL>;
+      layers = <0>;
+    };
+  };
 
 	keymap {
 		compatible = "zmk,keymap";
 		// Base alpha layer
     default_layer {
         bindings = <
-        &kp Q   &kp W        &kp E        &kp R        &kp T            &kp Y   &kp U          &kp I                 &kp O          &kp P   /* 0-9 */
-        &kp A   &hm LCTL S   &hm LALT D   &hm LGUI F   &kp G            &kp H   &hm RGUI J     &hm RALT K            &hm RCTL L     &kp SEMI   /* 10-19 */
-        &kp Z   &kp X        &kp C        &kp V        &kp B            &kp N   &kp M          &td UNDERSCORE COMMA  &td EXCL DOT   &td MINUS SLASH   /* 20-29 */
+        &kp Q   &kp W        &kp F        &kp P        &kp B            &kp J   &kp L          &kp U                 &kp Y          &kp ;   /* 0-9 */
+        &kp A   &kp R   &hm LALT S   &hm LGUI T        &kp G            &kp M   &hm RGUI N     &hm RALT E            &kp I          &kp O   /* 10-19 */
+        &kp Z   &kp X        &kp C        &kp D        &kp V            &kp K   &kp H          &kp COMMA             &kp DOT        &kp SLASH   /* 20-29 */
                                 &kp LCTRL &kp LEFT_SHIFT                &mt LC(LS(LALT)) SPACE &tog 1 
         >;
     };
 
     layer_Layer___2 {
         bindings = <
-        &kp ESCAPE         &kp AT_SIGN    &kp HASH    &kp DOLLAR          &kp PERCENT                  &kp CARET         &kp AMPERSAND         &kp ASTERISK              &key_repeat        &kp BACKSPACE  
-        &td LS(TAB) TAB    &kp EQUAL      &kp GRAVE   &kp SINGLE_QUOTE    &kp SINGLE_QUOTE             &kp BACKSLASH     &kp LEFT_BRACE        &kp RIGHT_BRACE           &kp PIPE           &kp ENTER 
-        &kp TILDE          &trans         &kp TILDE   &kp DOUBLE_QUOTES   &kp DOUBLE_QUOTES            &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS     &kp RIGHT_BRACKET  &to 2
+        &kp ESCAPE         &kp AT_SIGN    &kp HASH         &kp DOLLAR               &kp PERCENT                  &kp CARET         &kp AMPERSAND         &kp ASTERISK              &kp TILDE        &kp BACKSPACE  
+        &td LS(TAB) TAB    &kp EQUAL      &hm LALT GRAVE   &hm LGUI SINGLE_QUOTE    &kp SINGLE_QUOTE             &kp BACKSLASH     &kp LEFT_BRACE        &kp RIGHT_BRACE           &kp PIPE           &kp ENTER 
+        &kp LCTRL          &trans         &kp TILDE        &kp DOUBLE_QUOTES        &kp DOUBLE_QUOTES            &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS     &kp RIGHT_BRACKET  &to 2
                                       &to 0 &kp LEFT_SHIFT                &mt RIGHT_ALT SPACE  &to 3   
         >;
     };
 
     layer_Layer__3 {
-        bindings = <
-          &kp ESC  &trans  &trans  &trans   &trans               &kp LEFT_BRACKET   &kp LG(RBKT)  &kp LG(LBKT)  &kp RIGHT_BRACKET  &kp BACKSPACE   
-          &td LS(TAB) TAB  &trans  &trans  &trans  &kp DEL               &kp LEFT  &kp DOWN   &kp UP          &kp RIGHT      &kp ENTER   
-          &mo 4   &trans  &trans  &trans   &trans                   &trans    &trans   &trans             &trans         &trans   
-                                 &to 0     &kp LCTL          &mt RIGHT_ALT SPACE &to 1                       
+      bindings = <
+        &kp ESC          &trans     &trans    &trans    &trans                   &kp LEFT_BRACKET   &kp LG(RBKT)  &kp LG(LBKT)  &kp RIGHT_BRACKET  &kp BACKSPACE   
+        &td LS(TAB) TAB  &trans     &kp LALT  &kp LGUI  &kp DEL                  &kp LEFT           &kp DOWN      &kp UP          &kp RIGHT      &kp ENTER   
+        &kp LCTRL        &trans     &trans    &trans    &trans                   &trans    &trans   &trans             &trans         &mo 4
+                                      &to 0     &kp LEFT_SHIFT                          &mt RIGHT_ALT SPACE &to 1                       
         >;
     };
 
     layer_Layer__4 {
         bindings = <
-          &kp ESC  &kp C_PP    &kp C_PREV    &kp C_NEXT       &td PIPE UNDERSCORE        &kp MINUS  &kp N7        &kp N8  &kp N9  &kp BACKSPACE   
-          &td LS(TAB) TAB   &macro_px  &hm LEFT_SHIFT C_VOL_DN  &hm LGUI C_VOL_UP        &kp PLUS              &kp EQUAL  &kp N4        &kp N5  &kp N6      &kp ENTER   
-          &kp LCTL &kp PRCNT     &kp SLASH       &kp STAR      &kp PERIOD                &kp N0  &kp N1        &kp N2  &kp N3          &to 2   
-                                             &to 0      &kp LGUI                         &mt RIGHT_ALT SPACE   &to 1   
+          &kp ESC           &kp C_PP      &kp C_PREV                &kp C_NEXT          &td PIPE UNDERSCORE           &kp MINUS   &kp N7        &kp N8  &kp N9      &kp BACKSPACE   
+          &td LS(TAB) TAB   &macro_px     &hm LALT C_VOL_DN   &hm LGUI C_VOL_UP   &kp EQUAL                           &kp PLUS    &kp N4        &kp N5  &kp N6      &kp ENTER   
+          &kp LCTL          &kp PRCNT     &kp SLASH                 &kp STAR            &kp PERIOD                    &kp N0      &kp N1        &kp N2  &kp N3      &to 2   
+                                                                    &to 0               &kp LEFT_SHIFT                &mt RIGHT_ALT SPACE   &to 1   
         >;
     };
 
