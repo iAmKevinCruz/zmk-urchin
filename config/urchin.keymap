@@ -27,55 +27,61 @@
 
 
 / {
-	behaviors {
-        #include "macros.dtsi"
+  behaviors {
+    #include "macros.dtsi"
 
-        hm: homerow_mods {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick_tap_ms = <175>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
+    hm: homerow_mods {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS";
+      #binding-cells = <2>;
+      tapping-term-ms = <200>;
+      quick_tap_ms = <175>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
     };
     hs: homerow_shifts {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_SHIFTS";
-        #binding-cells = <2>;
-        tapping-term-ms = <150>;
-        quick_tap_ms = <0>;
-        flavor = "balanced";
-        bindings = <&kp>, <&kp>;
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_SHIFTS";
+      #binding-cells = <2>;
+      tapping-term-ms = <150>;
+      quick_tap_ms = <0>;
+      flavor = "balanced";
+      bindings = <&kp>, <&kp>;
     };
     hsl: homerow_shifts_layer {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_SHIFTS_LAYER";
-        #binding-cells = <2>;
-        tapping-term-ms = <150>;
-        quick_tap_ms = <0>;
-        flavor = "balanced";
-        bindings = <&kp>, <&to>;
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_SHIFTS_LAYER";
+      #binding-cells = <2>;
+      tapping-term-ms = <150>;
+      quick_tap_ms = <0>;
+      flavor = "balanced";
+      bindings = <&kp>, <&to>;
     };
-    	td: tapdance {
-            compatible = "zmk,behavior-hold-tap";
-            label = "TAPDANCE";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
+    td: tapdance {
+      compatible = "zmk,behavior-hold-tap";
+      label = "TAPDANCE";
+      #binding-cells = <2>;
+      tapping-term-ms = <150>;
+      quick_tap_ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    };
     bl: layertap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYERTAP";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&to>, <&kp>;
-        };
-
+      compatible = "zmk,behavior-hold-tap";
+      label = "LAYERTAP";
+      #binding-cells = <2>;
+      tapping-term-ms = <150>;
+      quick_tap_ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&to>, <&kp>;
+    };
+    mo_to: behavior_mo_tog {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "hold-preferred";
+      tapping-term-ms = <200>;
+      bindings = <&mo>, <&to>;
+    };
 	};
 
 
@@ -157,21 +163,21 @@
 		compatible = "zmk,keymap";
 		// Base alpha layer
     default_layer {
-        bindings = <
+      bindings = <
         &kp Q   &kp W        &kp F        &kp P        &kp B            &kp J   &kp L          &kp U                 &kp Y          &kp SEMI   /* 0-9 */
         &kp A   &kp R   &hm LALT S   &hm LGUI T        &kp G            &kp M   &hm RGUI N     &hm RALT E            &kp I          &kp O   /* 10-19 */
         &kp Z   &kp X        &kp C        &kp D        &kp V            &kp K   &kp H          &kp COMMA             &kp DOT        &kp SLASH   /* 20-29 */
-                                &kp LCTRL &kp LEFT_SHIFT                &mt LC(LS(LALT)) SPACE &tog 1 
-        >;
+        &kp LCTRL &kp LEFT_SHIFT                &mt LC(LS(LALT)) SPACE &mo_to 1 1
+      >;
     };
 
     layer_Layer___2 {
-        bindings = <
+      bindings = <
         &kp ESCAPE         &kp AT_SIGN    &kp HASH         &kp DOLLAR               &kp PERCENT                  &kp CARET         &kp AMPERSAND         &kp ASTERISK              &kp TILDE        &kp BACKSPACE  
         &td LS(TAB) TAB    &kp EQUAL      &hm LALT GRAVE   &hm LGUI SINGLE_QUOTE    &kp SINGLE_QUOTE             &kp BACKSLASH     &kp LEFT_BRACE        &kp RIGHT_BRACE           &kp PIPE           &kp ENTER 
         &kp LCTRL          &trans         &kp TILDE        &kp DOUBLE_QUOTES        &kp DOUBLE_QUOTES            &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS     &kp RIGHT_BRACKET  &to 2
-                                      &to 0 &kp LEFT_SHIFT                &mt RIGHT_ALT SPACE  &to 3   
-        >;
+        &to 0 &kp LEFT_SHIFT                &mt RIGHT_ALT SPACE  &to 3   
+      >;
     };
 
     layer_Layer__3 {
