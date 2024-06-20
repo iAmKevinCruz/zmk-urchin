@@ -47,3 +47,9 @@ label = "macro_px";
 bindings = <&kp P>, <&kp X>;
 };
 
+macro_to_base: macro_to_base{
+compatible = "zmk,behavior-macro";
+label = "macro_to_base";
+#binding-cells = <0>;
+bindings = <&to 0>, <&mo 1>;
+};

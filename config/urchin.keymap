@@ -87,7 +87,7 @@
       #binding-cells = <2>;
       flavor = "hold-preferred";
       tapping-term-ms = <200>;
-      bindings = <&to 0 &mo>, <&to>;
+      bindings = <&macro_to_base>, <&to>;
     };
 	};
 
