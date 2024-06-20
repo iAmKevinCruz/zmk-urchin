@@ -82,6 +82,13 @@
       tapping-term-ms = <200>;
       bindings = <&mo>, <&to>;
     };
+    mo_to_0: behavior_mo_0_tog {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "hold-preferred";
+      tapping-term-ms = <200>;
+      bindings = <&to 0 &mo>, <&to>;
+    };
 	};
 
 
@@ -185,17 +192,17 @@
         &kp ESC          &trans     &trans    &trans    &trans                   &kp LEFT_BRACKET   &kp LG(RBKT)  &kp LG(LBKT)  &kp RIGHT_BRACKET  &kp BACKSPACE   
         &td LS(TAB) TAB  &trans     &kp LALT  &kp LGUI  &kp DEL                  &kp LEFT           &kp DOWN      &kp UP          &kp RIGHT      &kp ENTER   
         &kp LCTRL        &trans     &trans    &trans    &trans                   &trans    &trans   &trans             &trans         &mo 4
-                                      &to 0     &kp LEFT_SHIFT                          &mt RIGHT_ALT SPACE &to 1                       
-        >;
+        &to 0     &kp LEFT_SHIFT                          &mt RIGHT_ALT SPACE &mo_to_0 1                       
+      >;
     };
 
     layer_Layer__4 {
-        bindings = <
-          &kp ESC           &kp C_PP      &kp C_PREV                &kp C_NEXT          &td PIPE UNDERSCORE           &kp MINUS   &kp N7        &kp N8  &kp N9      &kp BACKSPACE   
-          &td LS(TAB) TAB   &macro_px     &hm LALT C_VOL_DN   &hm LGUI C_VOL_UP   &kp EQUAL                           &kp PLUS    &kp N4        &kp N5  &kp N6      &kp ENTER   
-          &kp LCTL          &kp PRCNT     &kp SLASH                 &kp STAR            &kp PERIOD                    &kp N0      &kp N1        &kp N2  &kp N3      &to 2   
-                                                                    &to 0               &kp LEFT_SHIFT                &mt RIGHT_ALT SPACE   &to 1   
-        >;
+      bindings = <
+        &kp ESC           &kp C_PP      &kp C_PREV                &kp C_NEXT          &td PIPE UNDERSCORE           &kp MINUS   &kp N7        &kp N8  &kp N9      &kp BACKSPACE   
+        &td LS(TAB) TAB   &macro_px     &hm LALT C_VOL_DN         &hm LGUI C_VOL_UP   &kp EQUAL                     &kp PLUS    &kp N4        &kp N5  &kp N6      &kp ENTER   
+        &kp LCTL          &kp PRCNT     &kp SLASH                 &kp STAR            &kp PERIOD                    &kp N0      &kp N1        &kp N2  &kp N3      &to 2   
+        &to 0               &kp LEFT_SHIFT                &mt RIGHT_ALT SPACE   &mo_to_0 1   
+      >;
     };
 
 
