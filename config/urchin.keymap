@@ -172,7 +172,7 @@
     };
     combo_lgui{
       timeout-ms = <50>;
-      key-positions = <13 11>; /* S + R */
+      key-positions = <13 11>; /* T + R */
       bindings = <&kp LGUI>;
       slow-release; // this is true. for false, delete it.
     };
@@ -188,16 +188,28 @@
       bindings = <&kp LALT>;
       slow-release;
     };
-    combo_ralt{
+    // shortcut to access OPT and CMD at the same time. Difficult to accoumplish with the new combo set up
+    combo_lalt_lgui{
       timeout-ms = <50>;
-      key-positions = <17 18>; /* E + I */
-      bindings = <&kp RALT>;
-      slow-release;
+      key-positions = <12 13>; /* S + T */
+      bindings = <&kp LG(LALT)>;
     };
-    combo_super{
+    /// combo_ralt{
+    ///   timeout-ms = <50>;
+    ///   key-positions = <17 18>; /* E + I */
+    ///   bindings = <&kp RALT>;
+    ///   slow-release;
+    /// };
+    combo_lsuper{
       timeout-ms = <50>;
       key-positions = <20 32>; /* Z + Space */
       bindings = <&kp LC(LS(LALT))>;
+      slow-release;
+    };
+    combo_rsuper{
+      timeout-ms = <50>;
+      key-positions = <31 32>; /* Layer 1 + Space (two right thumb buttons) */
+      bindings = <&kp LC(LS(RALT))>;
       slow-release;
     };
   };
@@ -244,9 +256,9 @@
 
 		settings_layer {
 				bindings = <
-				&bootloader &none &none &bt BT_CLR &bt BT_SEL 0               &bt BT_SEL 3 &none &none &none &bootloader 
-				&none &none &none &none      &bt BT_SEL 1 						  &bt BT_SEL 4 &none &none &none &none
-				&none &none &none &none      &bt BT_SEL 2               &bt BT_SEL 5 &none &none &none &none
+				&bootloader &none &none &bt BT_CLR  &bt BT_SEL 0          &bt BT_SEL 3 &none &none &none &bootloader 
+				&none       &none &none &none       &bt BT_SEL 1          &bt BT_SEL 4 &none &none &none &none
+				&none       &none &none &none       &bt BT_SEL 2          &bt BT_SEL 5 &none &none &none &none
 										&to 0 &none                         &none &none 
 				>;
 		};
